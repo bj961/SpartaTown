@@ -6,12 +6,14 @@ public class TopDownAimRotation : MonoBehaviour
 {
     //[SerializeField] private SpriteRenderer armRenderer;
     //[SerializeField] private Transform armPivot;
-    [SerializeField] private SpriteRenderer characterRenderer;
+    //[SerializeField]
+    private SpriteRenderer characterRenderer;
 
     private TopDownController controller;
 
     private void Awake()
     {
+        characterRenderer = GetComponentInChildren<SpriteRenderer>();
         controller = GetComponent<TopDownController>();
     }
 
