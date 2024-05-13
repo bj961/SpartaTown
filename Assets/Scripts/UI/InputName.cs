@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class InputName : MonoBehaviour
 {
+    public GameObject playerCharacter;
     private InputField nameInputField;
     private Button submitButton;
     void Awake()
@@ -19,6 +20,11 @@ public class InputName : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    private void OnDisable()
+    {
+        Time.timeScale = 1f;
+    }
+
     public void SetName()
     {
         string name = nameInputField.text;
@@ -28,8 +34,7 @@ public class InputName : MonoBehaviour
             Debug.Log("Name set : " + name);
             // 이름 설정
 
-            Time.timeScale = 1f;
-            //DeactivateUI();
+            DeactivateUI();
         }
         else
         {
@@ -40,11 +45,11 @@ public class InputName : MonoBehaviour
 
     public void ActivateUI()
     {
-        gameObject.SetActive(true); // UI를 활성화합니다.
+        gameObject.SetActive(true);
     }
 
     public void DeactivateUI()
     {
-        gameObject.SetActive(false); // UI를 비활성화합니다.
+        gameObject.SetActive(false);
     }
 }
