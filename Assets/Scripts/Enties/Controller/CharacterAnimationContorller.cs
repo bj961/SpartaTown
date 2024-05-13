@@ -13,8 +13,9 @@ public class CharacterAnimationContorller : AnimationController
         base.Awake();
     }
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         //controller.OnAttackEvent += Attacking;
         controller.OnMoveEvent += Move;
     }
