@@ -9,7 +9,7 @@ public class TopDownMovement : MonoBehaviour
     private TopDownController controller;
     private Rigidbody2D movementRigidbody;
     //private CharacterStatHandler characterStatHandler;
-    private int speed = 3;
+    private int speed = 10;
 
     private Vector2 movementDirection = Vector2.zero;
 
