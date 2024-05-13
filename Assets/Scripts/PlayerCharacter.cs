@@ -14,7 +14,7 @@ public class PlayerCharacter : MonoBehaviour
     private string characterName;
     public string CharacterName
     {
-        get { return CharacterName; }
+        get { return characterName; }
         set
         {
             characterName = value;
