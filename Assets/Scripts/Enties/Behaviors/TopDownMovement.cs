@@ -19,7 +19,7 @@ public class TopDownMovement : MonoBehaviour
 
         // 'controller와 TopdownMovement가 같은 게임오브젝트 안에 있다' 라는 가정
         controller = GetComponent<TopDownController>();
-        movementRigidbody = GetComponent<Rigidbody2D>();
+        movementRigidbody = GetComponentInChildren<Rigidbody2D>();
         //characterStatHandler = GetComponent<CharacterStatHandler>();
     }
 
