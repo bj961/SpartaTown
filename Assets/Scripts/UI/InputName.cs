@@ -33,7 +33,7 @@ public class InputName : MonoBehaviour
         {
             Debug.Log("Name set : " + name);
             // 이름 설정
-
+            PlayerCharacter.Instance.ChangeName(name);
             DeactivateUI();
         }
         else

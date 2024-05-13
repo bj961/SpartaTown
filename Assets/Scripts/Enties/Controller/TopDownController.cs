@@ -11,8 +11,6 @@ public class TopDownController : MonoBehaviour
 
     protected bool IsAttacking { get; set; }
 
-    private float timeSinceLastAttack = float.MaxValue;
-
     protected virtual void Awake()
     {
         //stats = gameObject.GetComponent<CharacterStatHandler>();

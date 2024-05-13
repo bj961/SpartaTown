@@ -15,16 +15,38 @@ public class TopDownMovement : MonoBehaviour
 
     private void Awake()
     {
-        // awake는 주로 내 컴포넌트 안에서 끝나는 것 처리
+        if (GetComponent<TopDownController>() != null)
+        {
+            controller = GetComponent<TopDownController>();
+        }
+        else
+        {
+            Debug.LogError("controller NULL이다!!");
+        }
 
-        // 'controller와 TopdownMovement가 같은 게임오브젝트 안에 있다' 라는 가정
-        controller = GetComponent<TopDownController>();
-        movementRigidbody = GetComponentInChildren<Rigidbody2D>();
+        if (GetComponentInChildren<Rigidbody2D>() != null)
+        {
+            movementRigidbody = GetComponentInChildren<Rigidbody2D>();
+        }
+        else
+        {
+            Debug.LogError("rigidbody2D NULL이다!!");
+        }
+        
         //characterStatHandler = GetComponent<CharacterStatHandler>();
     }
 
     private void Start()
     {
+        if (GetComponentInChildren<Rigidbody2D>() != null)
+        {
+            movementRigidbody = GetComponentInChildren<Rigidbody2D>();
+            Debug.Log("Start() rigidbody2D NULL 아닌데??");
+        }
+        else
+        {
+            Debug.LogError("Start() rigidbody2D NULL이다!!");
+        }
         controller.OnMoveEvent += Move;
     }
 

@@ -40,9 +40,6 @@ public class PlayerCharacter : MonoBehaviour
             //Time.timeScale = 0f;
             //
 
-
-
-
             characterNameText = GetComponentInChildren<Text>();
             characterNameText.text = CharacterName;
             OnNameChanged += UpdateNameUI;
