@@ -17,18 +17,18 @@
 ## 선택 구현사항
     - [O]  시간 표시
     - [O]  인게임 이름 바꾸기
-    - [ ]  참석 인원 UI
+    - [△]  참석 인원 UI
     - [ ]  인게임 캐릭터 선택
     - [ ]  NPC 대화
 
 
+- △ : NPC의 이름이 참석자 UI에 표시되나, 정작 NPC와 NPC 머리위 이름 UI가 표시되지 않는 문제
+
 
 ## 진행중인 사항
-- 플레이어 캐릭터 싱글톤화 (PlayerCharacter.cs) - develop_singletone 브랜치
 - 캐릭터 선택 시스템 및 인게임 변경 기능
 - 인게임 UI 구현중
     - 캐릭터 변경 UI 제외한 나머지 UI 구현
-    - 기능은 미완성(해당 함수들 PlayerCharacter.cs에 구현중)
 
 
 
@@ -38,17 +38,8 @@
 - 캐릭터 생성/변경시 prefab으로 객체 생성하여 연결
 - 이름 변경 시 event 통해서 캐릭터 머리 위의 UI의 이름 변경
 
-#### 메소드
-CreateCharacter(GameObject characterPrefab, string newName)
-
-ChangeCharactger(GameObject newCharacterPrefab)
-
-ChangeName(string newName)
-
-UpdateNameUI()
 
 
 ## 진행예정 사항 (미구현내역)
 - 캐릭터 선택 UI
-- 참석자 출력 기능
 - NPC 대화
