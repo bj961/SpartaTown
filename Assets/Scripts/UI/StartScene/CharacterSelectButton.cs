@@ -18,13 +18,13 @@ public class CharacterSelectButton : MonoBehaviour
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(OnButtonClicked);
-        thisImage = GetComponent<Image>();
+        //thisImage = GetComponent<Image>();
     }
 
     public void OnButtonClicked()
     {
         StartManager.Instance.SetCharacterPrefab(selectedCharcter);
-        targetImage.sprite = thisImage.sprite;
+        //targetImage.sprite = thisImage.sprite;
         nameInputUI.SetActive(true);
         characterSelectUI.SetActive(false);
     }

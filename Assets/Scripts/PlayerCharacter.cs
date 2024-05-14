@@ -37,7 +37,7 @@ public class PlayerCharacter : MonoBehaviour
 
             //테스트용임시
             //CreateCharacter(temp_prefab1, "김전사");
-            CreateCharacter(temp_prefab2, "최법사");
+            //CreateCharacter(temp_prefab2, "최법사");
             //
 
             characterNameText = GetComponentInChildren<Text>();
