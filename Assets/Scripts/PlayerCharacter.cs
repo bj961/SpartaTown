@@ -10,7 +10,8 @@ public class PlayerCharacter : MonoBehaviour
     public GameObject character;
     private Text characterNameText;
 
-    public GameObject temp_prefab; //테스트용 임시코드
+    public GameObject temp_prefab1; //테스트용 임시코드
+    public GameObject temp_prefab2; //테스트용 임시코드
 
     public delegate void NameChanged();
     public static event NameChanged OnNameChanged;
@@ -35,7 +36,8 @@ public class PlayerCharacter : MonoBehaviour
             Instance = this;
 
             //테스트용임시
-            CreateCharacter(temp_prefab, "김전사");
+            //CreateCharacter(temp_prefab1, "김전사");
+            CreateCharacter(temp_prefab2, "최법사");
             //
 
             characterNameText = GetComponentInChildren<Text>();
@@ -60,10 +62,10 @@ public class PlayerCharacter : MonoBehaviour
         Vector3 position = character.transform.position;
         string name = CharacterName;
 
-        Destroy(gameObject);
-        var newCharacter = Instantiate(newCharacterPrefab, position, Quaternion.identity);
-        var newPlayerCharacter = newCharacter.GetComponent<PlayerCharacter>();
-        newPlayerCharacter.ChangeName(name);
+        Destroy(character);
+
+        CreateCharacter(newCharacterPrefab, name);
+        transform.position = position;
     }
 
     public void ChangeName(string newName)
