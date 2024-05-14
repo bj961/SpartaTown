@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class InputName : MonoBehaviour
 {
     public GameObject playerCharacter;
+    public Text nameText;
     private InputField nameInputField;
     private Button submitButton;
     void Awake()
