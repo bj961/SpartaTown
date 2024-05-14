@@ -10,9 +10,8 @@ public class CharacterAnimationContorller : AnimationController
         base.Awake();
     }
 
-    protected override void Start()
+    protected void Start()
     {
-        base.Start();
         controller.OnMoveEvent += Move;
     }
 

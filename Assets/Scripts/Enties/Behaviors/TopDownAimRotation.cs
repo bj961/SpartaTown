@@ -10,46 +10,12 @@ public class TopDownAimRotation : MonoBehaviour
 
     private void Awake()
     {
-
-        if (GetComponentInChildren<SpriteRenderer>() != null)
-        {
-            characterRenderer = GetComponentInChildren<SpriteRenderer>();
-        }
-        else
-        {
-            Debug.LogError("Aim.cs Awake() Renderer NULL이다!!");
-        }
-
-        //characterRenderer = GetComponentInChildren<SpriteRenderer>();
-
-
-
-        if (GetComponent<TopDownController>() != null)
-        {
-            controller = GetComponent<TopDownController>();
-        }
-        else
-        {
-            Debug.LogError("Aim.cs controller NULL이다!!");
-        }
-
-        //controller = GetComponent<TopDownController>();
+        characterRenderer = GetComponentInChildren<SpriteRenderer>();
+        controller = GetComponent<TopDownController>();
     }
 
     void Start()
     {
-        if (GetComponentInChildren<SpriteRenderer>() != null)
-        {
-            characterRenderer = GetComponentInChildren<SpriteRenderer>();
-            Debug.Log("Aim.cs Start() Renderer NULL아닌데?");
-        }
-        else
-        {
-            Debug.LogError("Aim.cs Start() Renderer NULL이다!!");
-        }
-
-
-
         controller.OnLookEvent += OnAim;
     }
 

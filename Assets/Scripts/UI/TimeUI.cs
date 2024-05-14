@@ -12,7 +12,6 @@ public class TimeUI : MonoBehaviour
         timeText = GetComponent<Text>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         timeText.text = DateTime.Now.ToString("HH:mm");
