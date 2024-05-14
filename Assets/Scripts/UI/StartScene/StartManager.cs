@@ -8,7 +8,7 @@ public class StartManager : MonoBehaviour
 {
     public static StartManager Instance;
 
-    public GameObject selectedCharacterPrefab;
+    private GameObject selectedCharacterPrefab;
     public string characterName;
 
     private void Awake()
@@ -23,9 +23,17 @@ public class StartManager : MonoBehaviour
         }
     }
 
-    void GameStart()
+    public void SetCharacterPrefab(GameObject prefab)
     {
+        selectedCharacterPrefab = prefab;
+    }
+
+
+    public void GameStart(string name)
+    {
+        characterName = name;
         PlayerCharacter.Instance.CreateCharacter(selectedCharacterPrefab, characterName);
+        //Destroy(gameObject);
         SceneManager.LoadScene("MainScene");
     }
 }

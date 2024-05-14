@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class InputName : MonoBehaviour
 {
     public GameObject playerCharacter;
-    public Text nameText;
     private InputField nameInputField;
     private Button submitButton;
     void Awake()
@@ -34,8 +33,15 @@ public class InputName : MonoBehaviour
         {
             Debug.Log("Name set : " + name);
             // 이름 설정
-            PlayerCharacter.Instance.ChangeName(name);
-            DeactivateUI();
+            if (StartManager.Instance != null)
+            {
+                StartManager.Instance.GameStart(name);
+            }
+            else
+            {
+                PlayerCharacter.Instance.ChangeName(name);
+                DeactivateUI();
+            }
         }
         else
         {

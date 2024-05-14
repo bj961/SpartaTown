@@ -5,10 +5,15 @@ using UnityEngine.UI;
 
 public class UndoButton : MonoBehaviour
 {
-    [SerializeField]
     private Button undoButton;
     [SerializeField]
     private GameObject characterSelectUI;
+
+    private void Awake()
+    {
+        undoButton = GetComponent<Button>();
+        undoButton.onClick.AddListener(Undo);
+    }
 
     void Undo()
     {
