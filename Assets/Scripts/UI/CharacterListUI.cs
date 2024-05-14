@@ -19,7 +19,7 @@ public class CharacterListUI : MonoBehaviour
 
     void UpdateList()
     {
-        GameObject[] characters = GameObject.FindGameObjectsWithTag("character");
+        GameObject[] characters = GameObject.FindGameObjectsWithTag("Character");
 
         participantsText.text = "";
         
