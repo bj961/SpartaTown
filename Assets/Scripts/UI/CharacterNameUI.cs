@@ -25,9 +25,16 @@ public class CharacterNameUI : MonoBehaviour
         textObj.transform.SetParent(canvasObj.transform);
         textObj.transform.localPosition = Vector3.zero;
 
+        RectTransform textTransform = textObj.AddComponent<RectTransform>();
+        textTransform.sizeDelta = new Vector2(200, 200);
+        textTransform.position = new Vector3(0, 100, 0);
+
+        textObj.AddComponent<CanvasRenderer>();
+
         // Text 컴포넌트 설정
         nameText = textObj.AddComponent<Text>();
         nameText.font = Resources.Load<Font>("Fonts/Maplestory Light");
+        nameText.fontSize = 36;
         nameText.text = PlayerCharacter.Instance.CharacterName;
         nameText.color = Color.black;
     }
