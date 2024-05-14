@@ -13,6 +13,7 @@ public class CharacterListUI : MonoBehaviour
     {
         refreshButton.onClick.AddListener(UpdateList);
         exitButton.onClick.AddListener(DisableUI);
+        PlayerCharacter.Instance.OnNameChanged += UpdateList;
     }
 
     private void OnEnable()

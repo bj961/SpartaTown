@@ -14,7 +14,7 @@ public class PlayerCharacter : MonoBehaviour
     public GameObject temp_prefab2; //테스트용 임시코드
 
     public delegate void NameChanged();
-    public static event NameChanged OnNameChanged;
+    public event NameChanged OnNameChanged;
 
     [SerializeField]
     private string characterName;
