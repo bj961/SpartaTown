@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class TopDownAimRotation : MonoBehaviour
 {
-    //[SerializeField] private SpriteRenderer armRenderer;
-    //[SerializeField] private Transform armPivot;
-    //[SerializeField]
     private SpriteRenderer characterRenderer;
 
     private TopDownController controller;

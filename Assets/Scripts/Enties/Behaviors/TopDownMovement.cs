@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class TopDownMovement : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class TopDownMovement : MonoBehaviour
 
     private TopDownController controller;
     private Rigidbody2D movementRigidbody;
-    //private CharacterStatHandler characterStatHandler;
+    
     private int speed = 10;
 
     private Vector2 movementDirection = Vector2.zero;
@@ -24,10 +25,16 @@ public class TopDownMovement : MonoBehaviour
             Debug.LogError("controller NULL이다!!");
         }
 
+
         if (GetComponentInChildren<Rigidbody2D>() != null)
         {
             movementRigidbody = GetComponentInChildren<Rigidbody2D>();
         }
+
+        //if (GetComponent<Rigidbody2D>() != null)
+        //{
+        //    movementRigidbody = GetComponent<Rigidbody2D>();
+        //}
         else
         {
             Debug.LogError("rigidbody2D NULL이다!!");
@@ -38,11 +45,18 @@ public class TopDownMovement : MonoBehaviour
 
     private void Start()
     {
+
         if (GetComponentInChildren<Rigidbody2D>() != null)
         {
             movementRigidbody = GetComponentInChildren<Rigidbody2D>();
             Debug.Log("Start() rigidbody2D NULL 아닌데??");
         }
+
+        //if (GetComponent<Rigidbody2D>() != null)
+        //{
+        //    movementRigidbody = GetComponent<Rigidbody2D>();
+        //    Debug.Log("Start() rigidbody2D NULL 아닌데??");
+        //}
         else
         {
             Debug.LogError("Start() rigidbody2D NULL이다!!");
@@ -64,9 +78,15 @@ public class TopDownMovement : MonoBehaviour
 
     private void ApplyMovement(Vector2 direction)
     {
-        //direction = direction * characterStatHandler.CurrentStat.speed; // 정규화 되어 들어오기 때문에 속도 곱해줌.
+
         direction = direction * speed;
         movementRigidbody.velocity = direction;
+        /*
+        if (PlayerCharacter.Instance.character.GetComponent<Rigidbody2D>())
+        {
+            PlayerCharacter.Instance.character.GetComponent<Rigidbody2D>().velocity = direction;
+        }
+        */
     }
 
 }

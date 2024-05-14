@@ -53,19 +53,44 @@ public class PlayerCharacter : MonoBehaviour
 
     public void CreateCharacter(GameObject characterPrefab, string name)
     {
+        /*
         character = Instantiate(characterPrefab, gameObject.transform);
+        if (!character.GetComponent<Rigidbody2D>())
+        {
+            character.AddComponent<Rigidbody2D>();
+        }
+        */
+        Instantiate(characterPrefab, gameObject.transform);
+
         CharacterName = name;
     }
 
     public void ChangeCharacter(GameObject newCharacterPrefab)
     {
+        //Vector3 position = character.transform.position;
         Vector3 position = character.transform.position;
         string name = CharacterName;
 
+        Destroy(gameObject);
+        var newCharacter = Instantiate(newCharacterPrefab, position, Quaternion.identity);
+        var newPlayerCharacter = newCharacter.GetComponent<PlayerCharacter>();
+
+        newPlayerCharacter.ChangeName(name);
+
+        /*
         Destroy(character);
 
         character = Instantiate(newCharacterPrefab, position, Quaternion.identity);
-        CharacterName = name;
+        */
+        /*
+        if (!character.GetComponent<Rigidbody2D>())
+        {
+            character.AddComponent<Rigidbody2D>();
+        }
+        */
+        //UpdateCollider();
+
+        //CharacterName = name;
     }
 
     public void ChangeName(string newName)
@@ -78,4 +103,23 @@ public class PlayerCharacter : MonoBehaviour
     {
         characterNameText.text = characterName;
     }
+
+
+    private void UpdateCollider()
+    {
+        // PlayerCharacter에 BoxCollider2D가 있다고 가정
+        var collider = GetComponent<BoxCollider2D>();
+        if (collider != null)
+        {
+            // 캐릭터의 SpriteRenderer를 가져옴
+            var spriteRenderer = character.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                // Collider의 크기를 캐릭터의 스프라이트 크기에 맞게 조정
+                collider.size = spriteRenderer.bounds.size;
+            }
+        }
+    }
+
+
 }
