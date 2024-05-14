@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CharacterListUI : MonoBehaviour
 {
+
     public Text participantsText;
     public Button refreshButton;
+    public Button exitButton;
 
     private void Awake()
     {
         refreshButton.onClick.AddListener(UpdateList);
+        exitButton.onClick.AddListener(DisableUI);
     }
 
     private void OnEnable()
@@ -19,13 +22,18 @@ public class CharacterListUI : MonoBehaviour
 
     void UpdateList()
     {
-        GameObject[] characters = GameObject.FindGameObjectsWithTag("character");
+        GameObject[] characters = GameObject.FindGameObjectsWithTag("Character");
 
         participantsText.text = "";
-        
+
         foreach (GameObject character in characters)
         {
-            participantsText.text += character.GetComponentInChildren<Text>().text;
+            participantsText.text += (character.GetComponentInChildren<Text>().text + "\n");
         }
+    }
+
+    private void DisableUI()
+    {
+        gameObject.SetActive(false);
     }
 }
