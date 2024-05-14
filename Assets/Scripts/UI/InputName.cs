@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +7,12 @@ using UnityEngine.UI;
 public class InputName : MonoBehaviour
 {
     public GameObject playerCharacter;
-    public Text nameText;
+    private Text nameText;
     private InputField nameInputField;
     private Button submitButton;
     void Awake()
     {
+        nameText = playerCharacter.GetComponentInChildren<Text>();
         nameInputField = GetComponentInChildren<InputField>();
         submitButton = GetComponentInChildren<Button>();
         submitButton.onClick.AddListener(SetName);

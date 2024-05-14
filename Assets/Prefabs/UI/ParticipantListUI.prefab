@@ -408,6 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   participantsText: {fileID: 8979129431917542284}
   refreshButton: {fileID: 5890773363374516934}
+  exitButton: {fileID: 7611921808630215808}
 --- !u!1 &5555660233954660894
 GameObject:
   m_ObjectHideFlags: 0
