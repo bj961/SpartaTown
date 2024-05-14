@@ -20,7 +20,7 @@ public class CharacterListUI : MonoBehaviour
         UpdateList();
     }
 
-    void UpdateList()
+    public void UpdateList()
     {
         GameObject[] characters = GameObject.FindGameObjectsWithTag("Character");
 
