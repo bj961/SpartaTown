@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform cameraTarget;
+    private Transform cameraTarget;
     [SerializeField] private Vector3 CamOffset = new Vector3(0, 0, -10);
 
 
     void LateUpdate()
     {
+        cameraTarget = PlayerCharacter.Instance.character.GetComponent<Transform>();
         Camera.main.transform.position = cameraTarget.position + CamOffset;
     }
 

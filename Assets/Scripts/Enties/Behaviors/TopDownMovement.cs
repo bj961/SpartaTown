@@ -26,26 +26,24 @@ public class TopDownMovement : MonoBehaviour
         }
 
 
-        if (GetComponentInChildren<Rigidbody2D>() != null)
-        {
-            movementRigidbody = GetComponentInChildren<Rigidbody2D>();
-        }
-
-        //if (GetComponent<Rigidbody2D>() != null)
+        //if (GetComponentInChildren<Rigidbody2D>() != null)
         //{
-        //    movementRigidbody = GetComponent<Rigidbody2D>();
+        //    movementRigidbody = GetComponentInChildren<Rigidbody2D>();
         //}
+
+        if (GetComponent<Rigidbody2D>() != null)
+        {
+            movementRigidbody = GetComponent<Rigidbody2D>();
+        }
         else
         {
             Debug.LogError("rigidbody2D NULL이다!!");
         }
-        
-        //characterStatHandler = GetComponent<CharacterStatHandler>();
     }
 
     private void Start()
     {
-
+        /*
         if (GetComponentInChildren<Rigidbody2D>() != null)
         {
             movementRigidbody = GetComponentInChildren<Rigidbody2D>();
@@ -61,6 +59,7 @@ public class TopDownMovement : MonoBehaviour
         {
             Debug.LogError("Start() rigidbody2D NULL이다!!");
         }
+        */
         controller.OnMoveEvent += Move;
     }
 

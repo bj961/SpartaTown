@@ -60,8 +60,8 @@ public class PlayerCharacter : MonoBehaviour
             character.AddComponent<Rigidbody2D>();
         }
         */
-        Instantiate(characterPrefab, gameObject.transform);
 
+        character = Instantiate(characterPrefab, gameObject.transform);
         CharacterName = name;
     }
 
@@ -74,7 +74,6 @@ public class PlayerCharacter : MonoBehaviour
         Destroy(gameObject);
         var newCharacter = Instantiate(newCharacterPrefab, position, Quaternion.identity);
         var newPlayerCharacter = newCharacter.GetComponent<PlayerCharacter>();
-
         newPlayerCharacter.ChangeName(name);
 
         /*
