@@ -30,6 +30,7 @@
 - sprite asset의 문제로 pivot위치 때문에 flip시 collider와 동떨어지는 문제
   TopDown용 sprite가 아닌 매트로배니아 sprite를 사용해서 생긴 문제임
 - NPC 머리 위에 이름 나오지 않음
+- StartScene 구현하지 않음
 
 
 
